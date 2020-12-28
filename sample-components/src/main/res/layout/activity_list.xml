@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/abl_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/bg_translucent_card"
+    android:elevation="4dp">
+
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:contentInsetStartWithNavigation="0dp"
+      app:layout_scrollFlags="scroll|exitUntilCollapsed"
+      app:navigationIcon="@drawable/ic_arrow_left"
+      app:titleTextColor="@color/black"
+      tools:title="Films" />
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <ImageView
+    android:id="@+id/iv_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/background_image"
+    android:scaleType="centerCrop"
+    tools:src="@drawable/bg_2" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="90dp"
+    android:paddingBottom="80dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:listitem="@layout/item_list" />
+
+  <ProgressBar
+    android:id="@+id/pb_loader"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
+    android:visibility="visible" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,2 +1,4 @@
-include ':sample'
+include ':sample-components'
+include ':sample-without-retrofit'
+include ':sample-with-retrofit'
 include ':lib'
