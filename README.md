@@ -5,8 +5,7 @@ The SWAPI (Star Wars API) SDK for Android, revived from the old repo at https://
 
 SWAPI SDk requires at minimum Java 8 or Android API 21.
 
-How to use it
-=============
+## How to use it
 
 Create a global instance in your application class
 ```java
