@@ -7,7 +7,8 @@ import androidx.annotation.IntDef
  *
  * Sort definition for Sorting Star wars data, values can be [ASC] or [DESC]
  */
-@Retention @IntDef(ASC, DESC) annotation class SWSort
+
 const val ASC = 0
 const val DESC = 1
 
+@Retention @IntDef(ASC, DESC) annotation class SWSort

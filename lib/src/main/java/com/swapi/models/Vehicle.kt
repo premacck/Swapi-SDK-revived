@@ -12,35 +12,35 @@ import java.util.*
  */
 @Parcelize data class Vehicle(
 
-  @SerializedName("name") override var name: String,
+  @SerializedName("name") var name: String,
 
-  @SerializedName("model") override var model: String,
+  @SerializedName("model") var model: String,
 
-  @SerializedName("vehicle_class") override var vehicleClass: String,
+  @SerializedName("vehicle_class") var vehicleClass: String,
 
-  @SerializedName("manufacturer") override var manufacturer: String,
+  @SerializedName("manufacturer") var manufacturer: String,
 
-  @SerializedName("cost_in_credits") override var costInCredits: String,
+  @SerializedName("cost_in_credits") var costInCredits: String,
 
-  @SerializedName("consumables") override var length: String,
+  @SerializedName("length") var length: String,
 
-  @SerializedName("created") override var crew: String,
+  @SerializedName("crew") var crew: String,
 
-  @SerializedName("edited") override var passengers: String,
+  @SerializedName("passengers") var passengers: String,
 
-  @SerializedName("max_atmosphering_speed") override var maxAtmospheringSpeed: String,
+  @SerializedName("max_atmosphering_speed") var maxAtmospheringSpeed: String,
 
-  @SerializedName("cargo_capacity") override var cargoCapacity: String,
+  @SerializedName("cargo_capacity") var cargoCapacity: String,
 
-  @SerializedName("consumables") override var consumables: String,
+  @SerializedName("consumables") var consumables: String,
 
-  @SerializedName("created") override var created: String,
+  @SerializedName("created") var created: String,
 
-  @SerializedName("edited") override var edited: String,
+  @SerializedName("edited") var edited: String,
 
-  @SerializedName("url") override var url: String,
+  @SerializedName("url") var url: String,
 
-  @SerializedName("pilots") override var pilotsUrls: ArrayList<String>,
+  @SerializedName("pilots") var pilotsUrls: ArrayList<String>,
 
-  @SerializedName("films") override var filmsUrls: ArrayList<String>,
-) : Parcelable, StarWarsVehicle
+  @SerializedName("films") var filmsUrls: ArrayList<String>,
+) : Parcelable

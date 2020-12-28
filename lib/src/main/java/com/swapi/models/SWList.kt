@@ -8,7 +8,7 @@ import java.util.*
  *
  * Generic list model
  */
-data class SWList<T> (
+data class SWList<T>(
   val count: Int = 0,
   val next: String? = null,
   val previous: String? = null,

@@ -11,7 +11,7 @@ import retrofit2.http.Query
  *
  * Star Wars API interface for making network calls.
  */
-interface StarWars {
+interface StarWarsApiService {
 
   @GET("/") fun getRootUrls(): Call<Root>
 
