@@ -5,7 +5,7 @@ The SWAPI (Star Wars API) SDK for Android, converted to kotlin, revived from the
 
 SWAPI SDk requires at minimum Java 8 or Android API 21.
 
-# Integration
+## Integration
 
 ### Gradle
 
@@ -49,7 +49,7 @@ implementation 'com.github.premacck.Swapi-SDK-revived:sample-components:release-
 </dependency>
 ```
 
-# How to use it
+## How to use it
 
 Create a global instance in your application class
 
