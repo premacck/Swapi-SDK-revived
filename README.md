@@ -5,7 +5,51 @@ The SWAPI (Star Wars API) SDK for Android, converted to kotlin, revived from the
 
 SWAPI SDk requires at minimum Java 8 or Android API 21.
 
-## How to use it
+# Integration
+
+### Gradle
+
+- Add the following in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+- For the SDK Library:
+```gradle
+implementation 'com.github.premacck.Swapi-SDK-revived:lib:release-1.0.0'
+```
+
+- For the UI components (without the Application class):
+```gradle
+implementation 'com.github.premacck.Swapi-SDK-revived:sample-components:release-1.0.0'
+```
+
+### Maven
+
+- Add the JitPack repository to your build file:
+```XML
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+- Add the dependency
+```XML
+<dependency>
+  <groupId>com.github.premacck.Swapi-SDK-revived</groupId>
+  <artifactId>sample-components</artifactId>
+  <version>release-1.0.0</version>
+</dependency>
+```
+
+# How to use it
 
 Create a global instance in your application class
 
