@@ -4,7 +4,6 @@ import android.content.Context
 import com.google.gson.GsonBuilder
 import com.swapi.network.*
 import okhttp3.Cache
-import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -43,17 +42,21 @@ object StarWarsSdk {
 
     val cache = Cache(context.cacheDir, STAR_WARS_NETWORK_CACHE_SIZE)
 
-    val okHttpClient = OkHttpClient.Builder().apply {
-      readTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
-      connectTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
-      addInterceptor(loggingInterceptor)
-      retryOnConnectionFailure(true)
-      cache(cache)
-    }.build()
+    val okHttpClient = UnsafeOkHttpClient.getBuilder()
+        .readTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
+        .connectTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
+        .addInterceptor(loggingInterceptor)
+        .retryOnConnectionFailure(true)
+        .cache(cache)
+        .build()
 
     val gson = GsonBuilder().setPrettyPrinting().setLenient().create()
 
-    val retrofit = Retrofit.Builder().baseUrl("https://swapi.dev/api/").addConverterFactory(GsonConverterFactory.create(gson)).client(okHttpClient).build()
+    val retrofit = Retrofit.Builder()
+        .baseUrl("https://swapi.dev/api/")
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .client(okHttpClient)
+        .build()
 
     val api = retrofit.create(StarWarsApiService::class.java)
     init(StarWarsRepositoryImpl(api))
