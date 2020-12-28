@@ -2,8 +2,11 @@ package com.swapi
 
 import android.content.Context
 import com.google.gson.GsonBuilder
-import com.swapi.network.*
+import com.swapi.network.StarWarsApiService
+import com.swapi.network.StarWarsRepository
+import com.swapi.network.StarWarsRepositoryImpl
 import okhttp3.Cache
+import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,8 +28,8 @@ object StarWarsSdk {
    * Initialize Star wars API with your own [Retrofit] instance
    */
   fun init(retrofit: Retrofit) {
-    val api = retrofit.create(StarWarsApiOverrideService::class.java)
-    init(StarWarsRepositoryOverrideImpl(api))
+    val api = retrofit.create(StarWarsApiService::class.java)
+    init(StarWarsRepositoryImpl(api))
   }
 
   private fun init(repo: StarWarsRepository) {
@@ -42,7 +45,7 @@ object StarWarsSdk {
 
     val cache = Cache(context.cacheDir, STAR_WARS_NETWORK_CACHE_SIZE)
 
-    val okHttpClient = UnsafeOkHttpClient.getBuilder()
+    val okHttpClient = OkHttpClient.Builder()
         .readTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
         .connectTimeout(STAR_WARS_NETWORK_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
         .addInterceptor(loggingInterceptor)

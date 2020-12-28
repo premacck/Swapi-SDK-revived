@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 /**
  * Prem's creation, on 28/12/20
@@ -13,29 +14,29 @@ import retrofit2.http.Query
  */
 interface StarWarsApiService {
 
-  @GET("") fun getRootUrls(): Call<Root>
+  @GET fun getRootUrls(@Url url: String = "https://swapi.dev/api/"): Call<Root>
 
-  @GET("people") fun getAllPeople(@Query("page") page: Int): Call<SWList<People>>
+  @GET fun getAllPeople(@Url url: String = "https://swapi.dev/api/people/", @Query("page") page: Int): Call<SWList<People>>
 
-  @GET("people/{id}") fun getPeople(@Path("id") peopleId: Int): Call<People>
+  @GET fun getPeople(@Url url: String = "https://swapi.dev/api/people/{id}/", @Path("id") peopleId: Int): Call<People>
 
-  @GET("films") fun getAllFilms(@Query("page") page: Int): Call<SWList<Film>>
+  @GET fun getAllFilms(@Url url: String = "https://swapi.dev/api/films/", @Query("page") page: Int): Call<SWList<Film>>
 
-  @GET("films/{id}") fun getFilm(@Path("id") filmId: Int): Call<Film>
+  @GET fun getFilm(@Url url: String = "https://swapi.dev/api/films/{id}/", @Path("id") filmId: Int): Call<Film>
 
-  @GET("starships") fun getAllStarships(@Query("page") page: Int): Call<SWList<Starship>>
+  @GET fun getAllStarships(@Url url: String = "https://swapi.dev/api/starships/", @Query("page") page: Int): Call<SWList<Starship>>
 
-  @GET("starships/{id}") fun getStarship(@Path("id") starshipId: Int): Call<Starship>
+  @GET fun getStarship(@Url url: String = "https://swapi.dev/api/starships/{id}/", @Path("id") starshipId: Int): Call<Starship>
 
-  @GET("vehicles") fun getAllVehicles(@Query("page") page: Int): Call<SWList<Vehicle>>
+  @GET fun getAllVehicles(@Url url: String = "https://swapi.dev/api/vehicles/", @Query("page") page: Int): Call<SWList<Vehicle>>
 
-  @GET("vehicles/{id}") fun getVehicle(@Path("id") vehicleId: Int): Call<Vehicle>
+  @GET fun getVehicle(@Url url: String = "https://swapi.dev/api/vehicles/{id}/", @Path("id") vehicleId: Int): Call<Vehicle>
 
-  @GET("species") fun getAllSpecies(@Query("page") page: Int): Call<SWList<Species>>
+  @GET fun getAllSpecies(@Url url: String = "https://swapi.dev/api/species/", @Query("page") page: Int): Call<SWList<Species>>
 
-  @GET("species/{id}") fun getSpecies(@Path("id") speciesId: Int): Call<Species>
+  @GET fun getSpecies(@Url url: String = "https://swapi.dev/api/species/{id}/", @Path("id") speciesId: Int): Call<Species>
 
-  @GET("planets") fun getAllPlanets(@Query("page") page: Int): Call<SWList<Planet>>
+  @GET fun getAllPlanets(@Url url: String = "https://swapi.dev/api/planets/", @Query("page") page: Int): Call<SWList<Planet>>
 
-  @GET("planets/{id}") fun getPlanet(@Path("id") planetId: Int): Call<Planet>
+  @GET fun getPlanet(@Url url: String = "https://swapi.dev/api/planets/{id}/", @Path("id") planetId: Int): Call<Planet>
 }
