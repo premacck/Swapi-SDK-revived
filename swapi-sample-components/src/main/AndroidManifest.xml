@@ -8,10 +8,10 @@
     android:allowBackup="true">
 
     <activity
-      android:name=".MainActivity"
+      android:name=".ui.StarWarsMainActivity"
       android:screenOrientation="portrait"/>
     <activity
-      android:name=".ListActivity"
+      android:name=".ui.StarWarsListActivity"
       android:screenOrientation="portrait" />
   </application>
 </manifest>

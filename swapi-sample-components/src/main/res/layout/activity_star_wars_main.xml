@@ -5,7 +5,7 @@
   android:layout_height="match_parent"
   android:gravity="center"
   android:orientation="vertical"
-  tools:context="com.prembros.swapi.sample_components.MainActivity"
+  tools:context="com.prembros.swapi.sample_components.ui.StarWarsMainActivity"
   tools:ignore="HardcodedText">
 
   <Button

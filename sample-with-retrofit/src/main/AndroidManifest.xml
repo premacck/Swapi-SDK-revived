@@ -14,7 +14,7 @@
     tools:ignore="AllowBackup"
     tools:replace="android:label">
     <activity
-      android:name="com.prembros.swapi.sample_components.MainActivity"
+      android:name="com.prembros.swapi.sample_components.ui.StarWarsMainActivity"
       android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
       </intent-filter>
     </activity>
     <activity
-      android:name="com.prembros.swapi.sample_components.ListActivity"
+      android:name="com.prembros.swapi.sample_components.ui.StarWarsListActivity"
       android:screenOrientation="portrait"
       android:theme="@style/FullScreen" />
   </application>

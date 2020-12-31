@@ -17,7 +17,7 @@
     android:elevation="4dp">
 
     <androidx.appcompat.widget.Toolbar
-      android:id="@+id/toolbar_list"
+      android:id="@+id/toolbar_star_wars_list"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:contentInsetStartWithNavigation="0dp"
@@ -28,7 +28,7 @@
   </com.google.android.material.appbar.AppBarLayout>
 
   <ImageView
-    android:id="@+id/iv_background"
+    android:id="@+id/iv_star_wars_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="@string/background_image"
@@ -36,7 +36,7 @@
     tools:src="@drawable/bg_2" />
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rv_list"
+    android:id="@+id/rv_star_wars_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false"
@@ -48,7 +48,7 @@
     tools:listitem="@layout/item_list" />
 
   <ProgressBar
-    android:id="@+id/pb_loader"
+    android:id="@+id/pb_star_wars_loader"
     style="?android:attr/progressBarStyleLarge"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

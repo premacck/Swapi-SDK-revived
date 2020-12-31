@@ -1,10 +1,11 @@
-package com.prembros.swapi.sample_components
+package com.prembros.swapi.sample_components.ui
 
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.prembros.swapi.sample_components.*
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+open class StarWarsMainActivity : AppCompatActivity(R.layout.activity_star_wars_main) {
 
   private val btnFilms by lazy { findViewById<Button>(R.id.btn_films) }
   private val btnPeople by lazy { findViewById<Button>(R.id.btn_people) }
@@ -19,11 +20,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
   }
 
   private fun initListeners() {
-    btnFilms?.setOnClickListener { ListActivity.launch(this, LIST_FILMS) }
-    btnPeople?.setOnClickListener { ListActivity.launch(this, LIST_PEOPLE) }
-    btnPlanets?.setOnClickListener { ListActivity.launch(this, LIST_PLANETS) }
-    btnSpecies?.setOnClickListener { ListActivity.launch(this, LIST_SPECIES) }
-    btnStarships?.setOnClickListener { ListActivity.launch(this, LIST_STARSHIPS) }
-    btnVehicles?.setOnClickListener { ListActivity.launch(this, LIST_VEHICLES) }
+    btnFilms?.setOnClickListener { StarWarsListActivity.launch(this, LIST_FILMS) }
+    btnPeople?.setOnClickListener { StarWarsListActivity.launch(this, LIST_PEOPLE) }
+    btnPlanets?.setOnClickListener { StarWarsListActivity.launch(this, LIST_PLANETS) }
+    btnSpecies?.setOnClickListener { StarWarsListActivity.launch(this, LIST_SPECIES) }
+    btnStarships?.setOnClickListener { StarWarsListActivity.launch(this, LIST_STARSHIPS) }
+    btnVehicles?.setOnClickListener { StarWarsListActivity.launch(this, LIST_VEHICLES) }
   }
 }

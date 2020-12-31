@@ -1,4 +1,4 @@
-include ':sample-components'
+include ':swapi-sample-components'
 include ':sample-without-retrofit'
 include ':sample-with-retrofit'
-include ':lib'
+include ':Swapi-Revived'

@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-  implementation project(':lib')
-  implementation project(':sample-components')
+  implementation project(':Swapi-Revived')
+  implementation project(':swapi-sample-components')
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
