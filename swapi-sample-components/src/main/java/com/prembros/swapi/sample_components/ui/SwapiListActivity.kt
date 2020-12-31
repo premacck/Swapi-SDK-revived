@@ -14,7 +14,7 @@ import com.prembros.swapi.sample_components.*
 import com.prembros.swapi.sample_components.adapter.*
 import com.prembros.swapi.sample_components.data.EndlessRecyclerViewScrollListener
 import com.swapi.StarWarsSdk
-import com.swapi.models.SWList
+import com.swapi.models.*
 import com.swapi.network.RetrofitCallBack
 import retrofit2.Response
 import timber.log.Timber
@@ -48,7 +48,7 @@ abstract class SwapiListActivity(@LayoutRes contentLayoutId: Int = R.layout.acti
     const val LIST_TYPE = "list_type"
   }
 
-  @Suppress("DEPRECATION") override fun onCreate(savedInstanceState: Bundle?) {
+  override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     WindowCompat.setDecorFitsSystemWindows(window, false)
     page = 1
@@ -96,10 +96,19 @@ abstract class SwapiListActivity(@LayoutRes contentLayoutId: Int = R.layout.acti
     }
   }
 
+  @Suppress("UNCHECKED_CAST")
   private fun <DATA> retrofitCallBack(): RetrofitCallBack<SWList<DATA>>.() -> Unit = {
     onResponse {
       loaderProgressBar?.visibility = View.GONE
       onDataResponse(it)
+      when (listType) {
+        LIST_FILMS -> onAllFilmsResponse(it as Response<SWList<Film>>)
+        LIST_PEOPLE -> onAllPeopleResponse(it as Response<SWList<People>>)
+        LIST_PLANETS -> onAllPlanetsResponse(it as Response<SWList<Planet>>)
+        LIST_SPECIES -> onAllSpeciesResponse(it as Response<SWList<Species>>)
+        LIST_STARSHIPS -> onAllStarshipsResponse(it as Response<SWList<Starship>>)
+        LIST_VEHICLES -> onAllVehiclesResponse(it as Response<SWList<Vehicle>>)
+      }
     }
     // Called on failed response from server
     onFailure {
@@ -115,7 +124,40 @@ abstract class SwapiListActivity(@LayoutRes contentLayoutId: Int = R.layout.acti
 
   abstract fun initRecyclerView()
 
+  /**
+   * Common callback for all Swapi responses
+   */
   abstract fun <DATA> onDataResponse(it: Response<SWList<DATA>>)
+
+  /**
+   * Dedicated callback for all [Film] response
+   */
+  open fun onAllFilmsResponse(response: Response<SWList<Film>>) {}
+
+  /**
+   * Dedicated callback for all [People] response
+   */
+  open fun onAllPeopleResponse(response: Response<SWList<People>>) {}
+
+  /**
+   * Dedicated callback for all [Planet] response
+   */
+  open fun onAllPlanetsResponse(response: Response<SWList<Planet>>) {}
+
+  /**
+   * Dedicated callback for all [Species] response
+   */
+  open fun onAllSpeciesResponse(response: Response<SWList<Species>>) {}
+
+  /**
+   * Dedicated callback for all [Starship] response
+   */
+  open fun onAllStarshipsResponse(response: Response<SWList<Starship>>) {}
+
+  /**
+   * Dedicated callback for all [Vehicle] response
+   */
+  open fun onAllVehiclesResponse(response: Response<SWList<Vehicle>>) {}
 
   open fun onDataFailure(throwable: Throwable) {
     Timber.e(throwable)
