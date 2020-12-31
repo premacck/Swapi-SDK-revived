@@ -29,7 +29,7 @@ abstract class SwapiListActivity(@LayoutRes contentLayoutId: Int = R.layout.acti
   open val starWarsList: RecyclerView? by lazy { findViewById(R.id.rv_star_wars_list) }
   open val loaderProgressBar: ProgressBar? by lazy { findViewById(R.id.pb_star_wars_loader) }
 
-  private val listType by lazy { intent?.getIntExtra(LIST_TYPE, LIST_FILMS) }
+  protected val listType by lazy { intent?.getIntExtra(LIST_TYPE, LIST_FILMS) }
   internal val adapter by lazy {
     when (listType) {
       LIST_FILMS -> FilmAdapter()
