@@ -1,6 +1,8 @@
 SWAPI-Android-SDK (revived)
 =================
 
+[![](https://jitpack.io/v/premacck/Swapi-SDK-revived.svg)](https://jitpack.io/#premacck/Swapi-SDK-revived)
+
 The SWAPI (Star Wars API) SDK for Android, converted to kotlin, revived from the good old SDK at https://github.com/Oleur/SWAPI-Android-SDK
 
 SWAPI SDk requires at minimum Java 8 or Android API 21.
@@ -20,12 +22,13 @@ allprojects {
 
 - For the SDK Library:
 ```gradle
-implementation 'com.github.premacck.Swapi-SDK-revived:lib:release-1.0.0'
+implementation 'com.github.premacck.Swapi-SDK-revived:Swapi-Revived:release-1.1.2'
 ```
 
 - For the UI components (without the Application class):
+(You can use this to quickly implement the star wars sample in your project, which could be a library sample)
 ```gradle
-implementation 'com.github.premacck.Swapi-SDK-revived:sample-components:release-1.0.0'
+implementation 'com.github.premacck.Swapi-SDK-revived:swapi-sample-components:release-1.1.2'
 ```
 
 ### Maven
@@ -40,12 +43,21 @@ implementation 'com.github.premacck.Swapi-SDK-revived:sample-components:release-
 </repositories>
 ```
 
-- Add the dependency
+- Add the dependency (for SDK)
 ```XML
 <dependency>
   <groupId>com.github.premacck.Swapi-SDK-revived</groupId>
-  <artifactId>sample-components</artifactId>
-  <version>release-1.0.0</version>
+  <artifactId>Swapi-Revived</artifactId>
+  <version>release-1.1.1</version>
+</dependency>
+```
+
+- Add the dependency (for UI components)
+```XML
+<dependency>
+  <groupId>com.github.premacck.Swapi-SDK-revived</groupId>
+  <artifactId>swapi-sample-components</artifactId>
+  <version>release-1.1.1</version>
 </dependency>
 ```
 
@@ -97,5 +109,4 @@ StarWarsSdk.repo.getAllPlanets(2) {
 }
 ```
 
-Or you can Create a common `RetrofitCallBack`, as implemented in [ListActivity](https://github.com/premacck/Swapi-SDK-revived/blob/main/sample-components/src/main/java/com/prembros/swapi/sample_components/ListActivity.kt)
-
+Or you can Create a common `retrofitCallBack()`, as implemented in [SwapiListActivity](https://github.com/premacck/Swapi-SDK-revived/blob/main/swapi-sample-components/src/main/java/com/prembros/swapi/sample_components/ui/SwapiListActivity.kt)
