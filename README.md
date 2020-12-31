@@ -48,7 +48,7 @@ implementation 'com.github.premacck.Swapi-SDK-revived:swapi-sample-components:re
 <dependency>
   <groupId>com.github.premacck.Swapi-SDK-revived</groupId>
   <artifactId>Swapi-Revived</artifactId>
-  <version>release-1.1.1</version>
+  <version>release-1.1.2</version>
 </dependency>
 ```
 
@@ -57,7 +57,7 @@ implementation 'com.github.premacck.Swapi-SDK-revived:swapi-sample-components:re
 <dependency>
   <groupId>com.github.premacck.Swapi-SDK-revived</groupId>
   <artifactId>swapi-sample-components</artifactId>
-  <version>release-1.1.1</version>
+  <version>release-1.1.2</version>
 </dependency>
 ```
 
