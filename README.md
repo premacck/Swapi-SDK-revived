@@ -121,6 +121,7 @@ Using the `swapi-sample-components` dependency, you can create your own UI of SW
 ### 1. By using the in-built UI
 
 - Create an application class and initialize `StarWarsSdk`, as described above.
+  - Don't forget to add it in manifest's `<application/>` tag under `android:name` attribute
 - Add in-build UI activities to the manifest:
 ```XML
 <application
@@ -148,6 +149,7 @@ Using the `swapi-sample-components` dependency, you can create your own UI of SW
 #### For reference see sample of [State aware Epoxy controller](https://github.com/premacck/Swec)
 
 - Create an application class and initialize `StarWarsSdk`, as described above.
+  - Don't forget to add it in manifest's `<application/>` tag under `android:name` attribute
 - Add a class extending [SwapiMainActivity](https://github.com/premacck/Swapi-SDK-revived/blob/main/swapi-sample-components/src/main/java/com/prembros/swapi/sample_components/ui/SwapiMainActivity.kt) for your Main page (which will display buttons for all the types of lists that Swapi can display), and override required functions to launch respective list pages:
 ```kotlin
 class StarWarsMainActivity : SwapiMainActivity(R.layout.activity_star_wars_main) {
